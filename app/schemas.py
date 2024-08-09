@@ -31,3 +31,4 @@ class CreateReview(BaseModel):
 
 class CreateRating(BaseModel):
     grade: confloat(ge=1.0, le=5.0)
+
