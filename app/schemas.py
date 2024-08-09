@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, confloat
 from datetime import date
 
 
@@ -30,4 +30,4 @@ class CreateReview(BaseModel):
 
 
 class CreateRating(BaseModel):
-    grade: float
+    grade: confloat(ge=1.0, le=5.0)
