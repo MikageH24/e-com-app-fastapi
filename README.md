@@ -2,14 +2,12 @@
 
 Проект интернет-магазина на fastapi к курсу https://stepik.org/course/180000/promo
 
-Установка:
+Запуск:
 
-1) python -m pip install -r requirements.txt - установка зависимостей
+1) docker compose -f docker-compose.prod.yml up -d --build - сборка образа и поднятие контейнеров
+2) docker compose -f docker-compose.prod.yml exec web alembic upgrade head - миграция для создания структуры бд
 
-2) Подключение к бд postgresql
+Остановка контейнеров
 
-3) alembic revision --autogenerate -m "Initial migration" - создание миграции, чтобы создать в новой базе данных все необходимые таблицы
+1) docker-compose down -v 
 
-4) alembic upgrade head - выполнение миграции
-
-5) uvicorn app.main:app --reload - запуск приложения
