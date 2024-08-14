@@ -9,5 +9,6 @@
 
 Остановка контейнеров
 
-1) docker-compose down -v 
+1) docker compose -f docker-compose.prod.yml down -v
+
 
